@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{20C00D0F-E01A-4DEC-B58E-4E43793CD7F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4AFEF8D6-A3E3-4116-B873-B95F3C5F407A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSystem.Appoinment", "KarizmaClinicManagementSystem.Appoinment", "{124AF500-4D2C-4C5E-9D38-14777A499584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSystem.Framework", "KarizmaClinicManagementSystem.Framework", "{A248DDF1-FC7B-4814-9829-0C413B21FBB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.API", "src\Services\KarizmaClinicManagementSystem.Appoinment\Appointment.API\Appointment.API.csproj", "{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Application", "src\Services\KarizmaClinicManagementSystem.Appoinment\Appointment.Application\Appointment.Application.csproj", "{F55E7789-3F3F-4F71-B9D1-C164295EAD05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Domain.Core", "src\Services\KarizmaClinicManagementSystem.Appoinment\Appointment.Domain.Core\Appointment.Domain.Core.csproj", "{4C27565B-84F3-43AE-BD3D-812A3CDCD984}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Infrastructure", "src\Services\KarizmaClinicManagementSystem.Appoinment\Appointment.Infrastructure\Appointment.Infrastructure.csproj", "{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Infrastructure.Database", "src\Services\KarizmaClinicManagementSystem.Appoinment\Appointment.Infrastructure.Database\Appointment.Infrastructure.Database.csproj", "{3CB07983-61BF-4BE3-827B-A660F2D7FF97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarizmaClinicManagementSystem.Framework", "src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj", "{7A537E7B-5676-48BE-A14B-FD575C50FC7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSystem.Appoinment.Tests", "KarizmaClinicManagementSystem.Appoinment.Tests", "{29C93633-D294-4E6D-A765-EC5BDB6FBCAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Domain.UnitTests", "test\KarizmaClinicManagementSystem.Appoinment.Tests\Appointment.Domain.UnitTests\Appointment.Domain.UnitTests.csproj", "{423CB208-FF29-4272-AC0C-A33470EF0F64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55E7789-3F3F-4F71-B9D1-C164295EAD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55E7789-3F3F-4F71-B9D1-C164295EAD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55E7789-3F3F-4F71-B9D1-C164295EAD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55E7789-3F3F-4F71-B9D1-C164295EAD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C27565B-84F3-43AE-BD3D-812A3CDCD984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C27565B-84F3-43AE-BD3D-812A3CDCD984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C27565B-84F3-43AE-BD3D-812A3CDCD984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C27565B-84F3-43AE-BD3D-812A3CDCD984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB07983-61BF-4BE3-827B-A660F2D7FF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB07983-61BF-4BE3-827B-A660F2D7FF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB07983-61BF-4BE3-827B-A660F2D7FF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB07983-61BF-4BE3-827B-A660F2D7FF97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A537E7B-5676-48BE-A14B-FD575C50FC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A537E7B-5676-48BE-A14B-FD575C50FC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A537E7B-5676-48BE-A14B-FD575C50FC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A537E7B-5676-48BE-A14B-FD575C50FC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6} = {4AFEF8D6-A3E3-4116-B873-B95F3C5F407A}
+		{124AF500-4D2C-4C5E-9D38-14777A499584} = {72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6}
+		{A248DDF1-FC7B-4814-9829-0C413B21FBB7} = {72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6}
+		{B45F8DEA-1E25-4C1F-8D62-6BED17C811FB} = {124AF500-4D2C-4C5E-9D38-14777A499584}
+		{F55E7789-3F3F-4F71-B9D1-C164295EAD05} = {124AF500-4D2C-4C5E-9D38-14777A499584}
+		{4C27565B-84F3-43AE-BD3D-812A3CDCD984} = {124AF500-4D2C-4C5E-9D38-14777A499584}
+		{A7C62EFA-9C34-48C3-84FA-B2DB5464E9C1} = {124AF500-4D2C-4C5E-9D38-14777A499584}
+		{3CB07983-61BF-4BE3-827B-A660F2D7FF97} = {124AF500-4D2C-4C5E-9D38-14777A499584}
+		{7A537E7B-5676-48BE-A14B-FD575C50FC7F} = {A248DDF1-FC7B-4814-9829-0C413B21FBB7}
+		{29C93633-D294-4E6D-A765-EC5BDB6FBCAB} = {20C00D0F-E01A-4DEC-B58E-4E43793CD7F9}
+		{423CB208-FF29-4272-AC0C-A33470EF0F64} = {29C93633-D294-4E6D-A765-EC5BDB6FBCAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2051F60B-A606-4671-91EA-801AB1EC9513}
+	EndGlobalSection
+EndGlobal

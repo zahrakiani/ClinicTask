@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Persistence\Repositories\**" />
+    <EmbeddedResource Remove="Persistence\Repositories\**" />
+    <None Remove="Persistence\Repositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Persistence\Repositories\AppointmentRepository.cs" />
+    <Compile Include="Persistence\Repositories\ClinicRepository.cs" />
+    <Compile Include="Persistence\Repositories\DoctorRepository.cs" />
+    <Compile Include="Persistence\Repositories\DoctorTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\PatientRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
+    <ProjectReference Include="..\Appointment.Infrastructure.Database\Appointment.Infrastructure.Database.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\Mapper\" />
+  </ItemGroup>
+
+</Project>
