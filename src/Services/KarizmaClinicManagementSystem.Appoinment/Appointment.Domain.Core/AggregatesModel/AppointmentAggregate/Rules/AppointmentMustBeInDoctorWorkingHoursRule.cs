@@ -28,11 +28,6 @@ public class AppointmentMustBeInDoctorWorkingHoursRule : IBusinessRule
         this.checkDoctorWorkingTime = new CheckDoctorWorkingTime(doctorRepository);
     }
 
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool IsBroken()
     {
         var result = !checkDoctorWorkingTime.IsValid(doctorId, appointmentTime.StartTime, appointmentTime.EndTime);

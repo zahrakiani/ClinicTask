@@ -13,12 +13,12 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.7.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageReference Include="KarizmaClinicManagementSystem.Framework" Version="1.0.0" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
     <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
   </ItemGroup>
 

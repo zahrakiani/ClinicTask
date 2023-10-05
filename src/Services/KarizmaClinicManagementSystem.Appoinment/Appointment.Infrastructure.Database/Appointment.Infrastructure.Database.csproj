@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="KarizmaClinicManagementSystem.Framework" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
     <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
   </ItemGroup>
 

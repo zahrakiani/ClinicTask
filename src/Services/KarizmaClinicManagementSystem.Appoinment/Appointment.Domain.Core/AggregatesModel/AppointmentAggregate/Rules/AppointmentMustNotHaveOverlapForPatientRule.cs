@@ -32,10 +32,6 @@ public class AppointmentMustNotHaveOverlapForPatientRule : IBusinessRule
         this.appointmentTime = appointmentTime;
         this.checkPatientAppointmentOverlap = new CheckPatientAppointmentOverlap(patientRepository);
     }
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
 
     public bool IsBroken()
     {

@@ -28,11 +28,6 @@ public class DoctorDailyScheduleMustBeInClinicWorkingHoursRule : IBusinessRule
         this.endTime = endTime;
         this.doctorDailyScheduleIsInClinicWorkingHours = doctorDailyScheduleIsInClinicWorkingHours;
     }
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool IsBroken()
     {
         var result = !doctorDailyScheduleIsInClinicWorkingHours.IsValid(date,startTime,endTime);

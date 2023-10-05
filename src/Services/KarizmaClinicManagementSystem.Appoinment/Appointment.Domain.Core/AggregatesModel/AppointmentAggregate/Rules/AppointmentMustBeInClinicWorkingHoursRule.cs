@@ -35,8 +35,4 @@ public class AppointmentMustBeInClinicWorkingHoursRule : IBusinessRule
         return result;
     }
 
-    void IBusinessRule.AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
 }

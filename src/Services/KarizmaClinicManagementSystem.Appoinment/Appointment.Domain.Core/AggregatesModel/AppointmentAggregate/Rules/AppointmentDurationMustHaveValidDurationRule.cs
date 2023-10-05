@@ -32,11 +32,6 @@ public class AppointmentDurationMustHaveValidDurationRule : IBusinessRule
         this.checkDoctorValidDuration = new CheckDoctorValidDuration(doctorRepository,doctorTypeRepository);
     }
 
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool IsBroken()
     {
         var result = !checkDoctorValidDuration.IsValid(doctorId,durationTime);

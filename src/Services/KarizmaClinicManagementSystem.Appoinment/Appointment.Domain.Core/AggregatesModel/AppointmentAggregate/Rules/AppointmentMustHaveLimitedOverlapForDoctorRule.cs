@@ -37,10 +37,6 @@ public class AppointmentMustHaveLimitedOverlapForDoctorRule : IBusinessRule
         this.appointmentTime = appointmentTime;
         this.checkDoctorAppointmentOverlapLimit = new CheckDoctorAppointmentOverlapLimit(doctorRepository,doctorTypeRepository );
     }
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
 
     public bool IsBroken()
     {

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="KarizmaClinicManagementSystem.Framework" Version="1.0.0" />
+    <ProjectReference Include="..\..\..\..\..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
   </ItemGroup>
 
 </Project>

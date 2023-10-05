@@ -37,11 +37,6 @@ public class AppointmentMustNotHaveMoreThanMaxAppointmentPerDayRule : IBusinessR
         this.checkPatientMaxAppointment = new CheckPatientMaxAppointmentPerDay(patientRepository);
     }
 
-    public void AdjustError(ErrorCode errorCode)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool IsBroken()
     {
         var result = !checkPatientMaxAppointment.IsValid(patientId,appointmentTime.StartTime);

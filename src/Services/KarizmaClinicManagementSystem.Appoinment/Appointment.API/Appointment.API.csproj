@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="KarizmaClinicManagementSystem.Framework" Version="1.0.0" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
@@ -20,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
     <ProjectReference Include="..\Appointment.Application\Appointment.Application.csproj" />
     <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
     <ProjectReference Include="..\Appointment.Infrastructure.Database\Appointment.Infrastructure.Database.csproj" />
