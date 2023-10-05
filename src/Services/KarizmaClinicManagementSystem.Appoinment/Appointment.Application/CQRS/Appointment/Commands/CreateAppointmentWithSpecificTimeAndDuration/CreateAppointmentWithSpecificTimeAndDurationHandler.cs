@@ -9,6 +9,8 @@ using MediatR;
 using AppointmentEntity = Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Appointment;
 using Appointment.Application.Mappers;
 using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate;
+using Appointment.Domain.Core.Factories.ConcreteCreators;
+using Appointment.Domain.Core.Factories.Decorateor;
 
 namespace Appointment.Application.CQRS.Appointment.Commands.AppointmentWithSpecificTimeAndDuration;
 
@@ -65,7 +67,9 @@ public class CreateAppointmentWithSpecificTimeAndDurationHandler : IRequestHandl
             request.PatientId,
             request.Date.ToDateTime(request.StartTime),
             request.DurationMinutes);
-        var appointment = await appointmentWithSpecificTimeAndDuration.Create();
+
+        var createAppoinmentWithRoom = new CreateAppoinmentWithRoomDecorator(appointmentWithSpecificTimeAndDuration);
+        var appointment = await createAppoinmentWithRoom.Create();
 
         return appointment;
     }

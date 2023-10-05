@@ -7,6 +7,8 @@ using Appointment.Domain.Core.Factories.Factory;
 using FluentValidation;
 using MediatR;
 using AppointmentEntity = Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Appointment;
+using Appointment.Domain.Core.Factories.ConcreteCreators;
+using Appointment.Domain.Core.Factories.Decorateor;
 
 namespace Appointment.Application.CQRS.Appointment.Commands.CreateAppointmentWithSpecifiedTime;
 
@@ -61,10 +63,12 @@ public class CreateAppointmentWithSpecificTimeHandler : IRequestHandler<
             patientRepository,
             appointmentRepository); 
         
-        var appointmentWithSpecificTime = appointmentFactory.GetAppointment(request.DoctorId, 
-            request.PatientId, 
+        var appointmentWithSpecificTime = appointmentFactory.GetAppointment(request.DoctorId,
+        request.PatientId, 
             request.Date.ToDateTime(request.StartTime));
-        var appointment = await appointmentWithSpecificTime.Create();
+        var createAppoinmentWithRoom = new CreateAppoinmentWithRoomDecorator(appointmentWithSpecificTime);
+        var appointment = await createAppoinmentWithRoom.Create();
+
         return appointment;
     }
 }

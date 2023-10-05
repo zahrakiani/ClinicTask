@@ -23,11 +23,27 @@ public class Appointment : AggregateRoot<AppointmentId>
     public AppointmentTime AppointmentTime { get; private set; }
     public DoctorId DoctorId { get; private set; }
     public PatientId PatientId { get; private set; }
+    public string Room { get; private set; }
     public IDoctorRepository DoctorRepository { get; }
 
     public Appointment()
     {
 
+    }
+    private Appointment(
+    AppointmentId id,
+    DoctorId doctorId,
+    PatientId patientId,
+    DateTime startDate,
+    TimeSpan durationTime,
+    string room)
+    {
+        Id = id;
+        CreatedDate = DateTime.Now;
+        DoctorId = doctorId;
+        PatientId = patientId;
+        AppointmentTime = AppointmentTime.CreateNew(startDate, durationTime);
+        Room = room;
     }
     private Appointment(
         AppointmentId id,
@@ -100,6 +116,21 @@ public class Appointment : AggregateRoot<AppointmentId>
             doctorTypeRepository,
             patientRepository,
             appointmentRepository);
+    }
+
+    public static Appointment SetRoom(AppointmentId appointmentId,
+        DoctorId doctorId,
+        PatientId patientId,
+        DateTime startDate,
+        TimeSpan durationTime,
+        string roomName)
+    {
+        return new Appointment(appointmentId,
+            doctorId,
+            patientId,
+            startDate,
+            durationTime,
+            roomName);
     }
 
 }

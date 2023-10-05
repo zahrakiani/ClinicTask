@@ -9,6 +9,7 @@ using MediatR;
 using AppointmentEntity = Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Appointment;
 using Appointment.Application.Mappers;
 using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate;
+using Appointment.Domain.Core.Factories.Decorateor;
 
 namespace Appointment.Application.CQRS.Appointment.Commands.CreateAppointmentWithEarliestTime;
 
@@ -64,8 +65,9 @@ public class AppointmentWithSpecificTimeAndDurationHandler : IRequestHandler<
         var appointmentWithSpecificTime = appointmentFactory.GetAppointment(request.DoctorId,
             request.PatientId,
             request.DurationMinutes);
-        var appointment = await appointmentWithSpecificTime.Create();
 
+        var createAppoinmentWithRoom = new CreateAppoinmentWithRoomDecorator(appointmentWithSpecificTime);
+        var appointment = await createAppoinmentWithRoom.Create();
         return appointment;
     }
 }

@@ -1,9 +1,5 @@
 ﻿using Appointment.Domain.Core.Factories.CreatorInterface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AppointmentEntity = Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Appointment;
 
 namespace Appointment.Domain.Core.Factories.Decorateor;
 
@@ -13,11 +9,17 @@ public class CreateAppoinmentWithRoomDecorator : CreateAppoinmentDecorator
     {
     }
 
-    public override async Task<AggregatesModel.AppointmentAggregate.Appointment> Create()
+    public override async Task<AppointmentEntity> Create()
     {
         var appointment = await base.Create();
-        //Write Logging Here
-        return appointment;
+        var roomname = "Visiting room 2";
+        return AppointmentEntity.SetRoom(appointment.Id,
+            appointment.DoctorId,
+            appointment.PatientId,
+            appointment.AppointmentTime.StartTime,
+            appointment.AppointmentTime.DurationTime,
+            roomname
+            );
     }
 
 }
