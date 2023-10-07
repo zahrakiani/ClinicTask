@@ -23,6 +23,7 @@ public class AppointmentWithErlierTime : IAppointment
     private readonly Guid patientId;
     private readonly int durationTime;
     private readonly ICheckPatientAppointmentOverlap checkPatientAppointmentOverlap;
+    private readonly ICheckPatientMaxAppointmentPerDay checkPatientMaxAppointmentPerDay;
 
 
     public AppointmentWithErlierTime(IDoctorRepository doctorRepository,
@@ -43,6 +44,7 @@ public class AppointmentWithErlierTime : IAppointment
         this.patientId = patientId;
         this.durationTime = durationTime;
         this.checkPatientAppointmentOverlap = new CheckPatientAppointmentOverlap(patientRepository);
+        this.checkPatientMaxAppointmentPerDay = new CheckPatientMaxAppointmentPerDay(patientRepository);
 
     }
 
@@ -71,15 +73,15 @@ public class AppointmentWithErlierTime : IAppointment
         var doctorType = doctorTypeRepository.GetById(doctor.DoctorTypeId.Value);
 
         var doctorAvailableSchedule = doctor.WeeklySchedule.Where(x => x.Date > DateTime.Now)
-            .OrderBy(x => x.Date).ThenBy(x => x.StartTime);
+            .OrderBy(x => x.Date).ThenBy(x => x.StartTime).ToList();
 
         foreach (var daily in doctorAvailableSchedule)
         {
-            //if (!checkPatientMaxAppointmentPerDay.IsValid(patientId, daily.Date))
-            //    break;
+            if (!checkPatientMaxAppointmentPerDay.IsValid(patientId, daily.Date))
+                break;
 
             DateOnly dateOnlyDaily = DateOnly.FromDateTime(daily.Date);
-            DateTime startDailyTime = GetDateTime(dateOnlyDaily, daily.StartTime);
+            DateTime startDailyTime = GetStartTime(dateOnlyDaily, daily.StartTime);
             DateTime endDailyTime = GetDateTime(dateOnlyDaily, daily.EndTime);
 
             var doctorAppointments = doctorRepository.GetAppointmentListByDoctorIdAndTime(doctorId, dateOnlyDaily)
@@ -89,7 +91,7 @@ public class AppointmentWithErlierTime : IAppointment
             if (!doctorAppointments.Any()) return startDailyTime;
 
 
-            TimeSpan sartIndexTime = daily.StartTime;
+            TimeSpan sartIndexTime = daily.StartTime < DateTime.Now.TimeOfDay? DateTime.Now.AddMinutes(2).TimeOfDay : daily.StartTime;
 
             foreach (var appointment in doctorAppointments)
             {
@@ -135,6 +137,13 @@ public class AppointmentWithErlierTime : IAppointment
 
         throw new Exception("Unfortunately, the doctor has no free time in the current working week");
 
+    }
+
+    private DateTime GetStartTime(DateOnly dateOnlyDaily, TimeSpan startTime)
+    {
+        return GetDateTime(dateOnlyDaily, startTime) > DateTime.Now ? GetDateTime(dateOnlyDaily, startTime) :
+            GetDateTime(dateOnlyDaily, DateTime.Now.AddMinutes(1).TimeOfDay);
+        throw new NotImplementedException();
     }
 
     private DateTime GetDateTime(DateOnly dateOnly, TimeSpan time)

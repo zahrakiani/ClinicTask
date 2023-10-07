@@ -5,6 +5,7 @@ namespace Appointment.Domain.Core.Interfaces.IRepository;
 public interface IDoctorRepository
 {
     Doctor GetById(Guid id);
+    Task<Doctor> GetByIdAsync(Guid id);
     List<AggregatesModel.AppointmentAggregate.Appointment> GetAppointmentListByDoctorId(Guid doctorId);
     Task<List<AggregatesModel.AppointmentAggregate.Appointment>> GetAppointmentListByDoctorIdAsync(Guid doctorId);
     List<AggregatesModel.AppointmentAggregate.Appointment> GetAppointmentListByDoctorIdAndTime(Guid doctorId, DateOnly date);

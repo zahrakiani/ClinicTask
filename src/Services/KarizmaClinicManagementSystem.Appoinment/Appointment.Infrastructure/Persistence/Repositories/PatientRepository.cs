@@ -17,11 +17,15 @@ public class PatientRepository : IPatientRepository
     public List<Domain.Core.AggregatesModel.AppointmentAggregate.Appointment> GetAppointmentsOfPatientByDate(Guid PatientId, DateOnly date)
     {
         var id = PatientId.ConvertToPatientId();
-        DateTime startDate = date.ToDateTime(new TimeOnly());
+        DateTime startDate = date.ToDateTime(TimeOnly.FromDateTime(DateTime.Now));
+
         return dbContext.Appointments.Where(x => x.PatientId == id &&
          x.AppointmentTime.StartTime >= startDate && x.AppointmentTime.StartTime <= startDate.AddDays(1)).ToList();
     }
     public Patient GetById(Guid id)
     => dbContext.Patients.FirstOrDefault(x => x.Id == id.ConvertToPatientId());
+
+    public async Task<Patient> GetByIdAsync(Guid id)
+    => await dbContext.Patients.FirstOrDefaultAsync(x => x.Id == id.ConvertToPatientId());
 
 }

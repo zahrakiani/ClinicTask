@@ -10,5 +10,5 @@ namespace Appointment.Domain.Core.Interfaces.IRepository;
 public interface IAppointmentRepository
 {
     Task AddAsync(AggregatesModel.AppointmentAggregate.Appointment appointment, CancellationToken cancellationToken);
-    AggregatesModel.AppointmentAggregate.Appointment GetByIdAsync(AppointmentId id);
+    Task<AggregatesModel.AppointmentAggregate.Appointment> GetByIdAsync(Guid id);
 }

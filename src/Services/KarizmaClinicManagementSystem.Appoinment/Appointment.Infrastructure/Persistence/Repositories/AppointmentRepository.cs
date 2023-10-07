@@ -1,6 +1,8 @@
 ﻿using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate;
 using Appointment.Domain.Core.Interfaces.IRepository;
+using Appointment.Domain.Core.Services.ApoinmentService;
 using Appointment.Infrastructure.Database.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,7 @@ public class AppointmentRepository : IAppointmentRepository
         CancellationToken cancellationToken)
         => await dbContext.AddAsync(appointment, cancellationToken);
 
-    public Domain.Core.AggregatesModel.AppointmentAggregate.Appointment GetByIdAsync(AppointmentId id) 
-        => dbContext.Appointments.FirstOrDefault(x => x.Id == id);
+
+    public async Task<Domain.Core.AggregatesModel.AppointmentAggregate.Appointment> GetByIdAsync(Guid id)
+     => await dbContext.Appointments.FirstOrDefaultAsync(x => x.Id == id.ConvertToAppointmentId());
 }

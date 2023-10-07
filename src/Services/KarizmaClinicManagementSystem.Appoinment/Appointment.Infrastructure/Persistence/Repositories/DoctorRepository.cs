@@ -14,7 +14,7 @@ public class DoctorRepository : IDoctorRepository
 
     public List<Domain.Core.AggregatesModel.AppointmentAggregate.Appointment> GetAppointmentListByDoctorIdAndTime(Guid doctorId, DateOnly date)
     {
-        var appointmentDate = date.ToDateTime(new TimeOnly());
+        var appointmentDate = date.ToDateTime(TimeOnly.FromDateTime(DateTime.Now));
         return dbContext.Appointments.Where(x => x.DoctorId == doctorId.ConvertToDoctorId() &&
         x.AppointmentTime.StartTime >= appointmentDate && x.AppointmentTime.StartTime <= appointmentDate.AddDays(1)).ToList();
     }
@@ -27,4 +27,7 @@ public class DoctorRepository : IDoctorRepository
 
     public async Task<List<Domain.Core.AggregatesModel.AppointmentAggregate.Appointment>> GetAppointmentListByDoctorIdAsync(Guid doctorId)
         =>await dbContext.Appointments.Where(x => x.DoctorId == doctorId.ConvertToDoctorId()).ToListAsync();
+
+    public async Task<Doctor> GetByIdAsync(Guid id)
+     => await dbContext.Doctors.FirstOrDefaultAsync(x => x.Id == id.ConvertToDoctorId());
 }

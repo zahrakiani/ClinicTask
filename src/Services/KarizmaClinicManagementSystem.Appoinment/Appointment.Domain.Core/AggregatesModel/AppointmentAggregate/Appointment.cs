@@ -1,4 +1,5 @@
-﻿using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Rules;
+﻿using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Events;
+using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Rules;
 using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.ValueObjects;
 using Appointment.Domain.Core.AggregatesModel.DoctorAggregate;
 using Appointment.Domain.Core.AggregatesModel.PatientAggregate;
@@ -93,6 +94,8 @@ public class Appointment : AggregateRoot<AppointmentId>
               AppointmentTime,
               doctorRepository,
               doctorTypeRepository));
+
+        this.AddDomainEvent(new AddAppointmentSendNotificationEvent(id.Value, doctorId.Value, patientId.Value));
 
     }
     public static Appointment CreateNew(DoctorId doctorId, 
