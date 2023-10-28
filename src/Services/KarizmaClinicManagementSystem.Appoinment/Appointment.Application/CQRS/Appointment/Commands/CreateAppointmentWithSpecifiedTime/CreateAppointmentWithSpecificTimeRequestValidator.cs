@@ -2,11 +2,6 @@
 using Appointment.Domain.Core.Interfaces.IService.DoctorService;
 using Appointment.Domain.Core.Interfaces.IService.PatientService;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Appointment.Application.CQRS.Appointment.Commands.CreateAppointmentWithSpecifiedTime;
 

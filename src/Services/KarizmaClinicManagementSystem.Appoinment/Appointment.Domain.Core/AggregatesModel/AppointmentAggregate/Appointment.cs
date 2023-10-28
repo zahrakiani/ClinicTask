@@ -136,4 +136,11 @@ public class Appointment : AggregateRoot<AppointmentId>
             roomName);
     }
 
+    public static Appointment SetRoom(Appointment appointment,
+     string roomName)
+    {
+        appointment.Room = roomName;
+        return appointment;
+    }
+
 }

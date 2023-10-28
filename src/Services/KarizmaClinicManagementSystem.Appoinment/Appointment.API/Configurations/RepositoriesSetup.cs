@@ -1,5 +1,8 @@
 ﻿using Appointment.Domain.Core.Interfaces.IRepository;
+using Appointment.Infrastructure.DomainEventsDispatching;
+using Appointment.Infrastructure.Outbox;
 using Appointment.Infrastructure.Persistence.Repositories;
+using KarizmaClinicManagementSystem.Framework.Outbox;
 //using Appointment.Infrastructure.Persistence.Repositories;
 
 namespace Appointment.API.Configurations;
@@ -13,5 +16,6 @@ public static class RepositoriesSetup
         services.AddScoped<IAppointmentRepository, AppointmentRepository>();
         services.AddScoped<IDoctorTypeRepository, DoctorTypeRepository>();
         services.AddScoped<IClinicRepository, ClinicRepository>();
+
     }
 }

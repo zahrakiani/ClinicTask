@@ -25,9 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSyst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Domain.UnitTests", "test\KarizmaClinicManagementSystem.Appoinment.Tests\Appointment.Domain.UnitTests\Appointment.Domain.UnitTests.csproj", "{423CB208-FF29-4272-AC0C-A33470EF0F64}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSystem.Framework", "KarizmaClinicManagementSystem.Framework", "{9877E850-A4E8-4DCA-A0D9-6A672ADFE1A9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KarizmaClinicManagementSystem.Framework", "KarizmaClinicManagementSystem.Framework", "{D040CA28-72D0-445F-A9CF-262181FD3E9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarizmaClinicManagementSystem.Framework", "..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj", "{E054C8F7-C17F-44C5-89AE-20DF993F4627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarizmaClinicManagementSystem.Framework", "src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj", "{03E8CC89-5BB5-4333-A518-1A40909D9FDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{423CB208-FF29-4272-AC0C-A33470EF0F64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E054C8F7-C17F-44C5-89AE-20DF993F4627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E054C8F7-C17F-44C5-89AE-20DF993F4627}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E054C8F7-C17F-44C5-89AE-20DF993F4627}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E054C8F7-C17F-44C5-89AE-20DF993F4627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E8CC89-5BB5-4333-A518-1A40909D9FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E8CC89-5BB5-4333-A518-1A40909D9FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E8CC89-5BB5-4333-A518-1A40909D9FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E8CC89-5BB5-4333-A518-1A40909D9FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,8 +77,8 @@ Global
 		{3CB07983-61BF-4BE3-827B-A660F2D7FF97} = {124AF500-4D2C-4C5E-9D38-14777A499584}
 		{29C93633-D294-4E6D-A765-EC5BDB6FBCAB} = {20C00D0F-E01A-4DEC-B58E-4E43793CD7F9}
 		{423CB208-FF29-4272-AC0C-A33470EF0F64} = {29C93633-D294-4E6D-A765-EC5BDB6FBCAB}
-		{9877E850-A4E8-4DCA-A0D9-6A672ADFE1A9} = {72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6}
-		{E054C8F7-C17F-44C5-89AE-20DF993F4627} = {9877E850-A4E8-4DCA-A0D9-6A672ADFE1A9}
+		{D040CA28-72D0-445F-A9CF-262181FD3E9B} = {72E8CBEA-7E8A-4B7E-AF12-76C8F0B9BCF6}
+		{03E8CC89-5BB5-4333-A518-1A40909D9FDA} = {D040CA28-72D0-445F-A9CF-262181FD3E9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2051F60B-A606-4671-91EA-801AB1EC9513}

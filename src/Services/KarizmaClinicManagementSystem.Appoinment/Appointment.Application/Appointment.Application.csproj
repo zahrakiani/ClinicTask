@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CQRS\Appointment\Commands\AppointmentAddedNotification\AppointmentAddedPublishEventNotificationHandler.cs" />
+    <Compile Remove="CQRS\Appointment\Commands\AppointmentAddedNotification\AppointmentAddedSendNotification.cs" />
+    <Compile Remove="CQRS\Appointment\Commands\AppointmentAddedNotification\AppointmentAddedSendNotificationHandler.cs" />
+    <Compile Remove="CQRS\Appointment\Commands\AppointmentAddedNotification\SendApointmentAddedEmailCommand.cs" />
+    <Compile Remove="CQRS\Appointment\Commands\AppointmentAddedNotification\SendApointmentAddedEmailCommandHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="CQRS\Appointment\Queries\" />
   </ItemGroup>
 
@@ -18,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\KarizmaTask1\src\Services\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
+    <ProjectReference Include="..\..\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
     <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
   </ItemGroup>
 

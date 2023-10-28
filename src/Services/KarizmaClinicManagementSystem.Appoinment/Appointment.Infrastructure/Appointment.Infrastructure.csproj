@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -22,11 +22,20 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Appointment.Domain.Core\Appointment.Domain.Core.csproj" />
-    <ProjectReference Include="..\Appointment.Infrastructure.Database\Appointment.Infrastructure.Database.csproj" />
+	  <ProjectReference Include="..\Appointment.Application\Appointment.Application.csproj" />
+	  <ProjectReference Include="..\Appointment.Infrastructure.Database\Appointment.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\..\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Utility\Mapper\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

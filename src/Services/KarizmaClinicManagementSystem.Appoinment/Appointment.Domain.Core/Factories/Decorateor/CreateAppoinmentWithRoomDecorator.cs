@@ -13,11 +13,7 @@ public class CreateAppoinmentWithRoomDecorator : CreateAppoinmentDecorator
     {
         var appointment = await base.Create();
         var roomname = "Visiting room 2";
-        return AppointmentEntity.SetRoom(appointment.Id,
-            appointment.DoctorId,
-            appointment.PatientId,
-            appointment.AppointmentTime.StartTime,
-            appointment.AppointmentTime.DurationTime,
+        return AppointmentEntity.SetRoom(appointment,
             roomname
             );
     }

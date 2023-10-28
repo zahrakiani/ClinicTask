@@ -10,7 +10,8 @@ namespace Appointment.Application.CQRS.Appointment.Commands.AppointmentAddedNoti
 
 public class AppointmentAddedSendNotification : DomainNotificationBase<AddAppointmentSendNotificationEvent>
 {
-    public AppointmentAddedSendNotification(AddAppointmentSendNotificationEvent domainEvent, Guid id) : base(domainEvent, id)
+    public AppointmentAddedSendNotification(AddAppointmentSendNotificationEvent domainEvent, Guid id) 
+        : base(domainEvent, id)
     {
     }
 }

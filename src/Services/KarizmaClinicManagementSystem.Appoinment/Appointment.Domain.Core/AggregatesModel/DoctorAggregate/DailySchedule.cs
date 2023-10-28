@@ -7,8 +7,9 @@ using KarizmaClinicManagementSystem.Framework.ExceptionRules;
 
 namespace Appointment.Domain.Core.AggregatesModel.DoctorAggregate;
 
-public class DailySchedule:Entity<Guid>
+public class DailySchedule:Entity
 {
+    public Guid Id { get; private set; }
     public DoctorId DoctorId { get; private set; }
     public DateTime Date { get; private set; }
     public TimeSpan StartTime { get; private set; }

@@ -2,18 +2,9 @@
 using Appointment.Domain.Core.AggregatesModel.DoctorAggregate;
 using Appointment.Domain.Core.AggregatesModel.DoctorTypeAggregate;
 using Appointment.Domain.Core.AggregatesModel.PatientAggregate;
-using Appointment.Domain.Core.Interfaces;
 using Appointment.Infrastructure.Database.Configurations;
+using KarizmaClinicManagementSystem.Framework.Outbox;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Appointment.Infrastructure.Database.Context;
 
@@ -24,6 +15,8 @@ public class AppointmentDbContext : DbContext
     public DbSet<Domain.Core.AggregatesModel.AppointmentAggregate.Appointment> Appointments { get; set; }
     public DbSet<DoctorType> DoctorTypes { get; set; }
     public DbSet<Clinic> Clinics { get; set; }
+    public DbSet<InternalCommand> InternalCommands { get; set; }
+    public DbSet<OutboxMessage> OutboxMessages { get; set; }
 
     public AppointmentDbContext(DbContextOptions<AppointmentDbContext> options) : base(options)
     {

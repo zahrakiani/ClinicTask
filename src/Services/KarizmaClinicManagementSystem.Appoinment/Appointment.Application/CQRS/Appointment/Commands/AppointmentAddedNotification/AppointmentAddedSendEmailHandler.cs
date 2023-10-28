@@ -1,4 +1,5 @@
-﻿using Appointment.Application.CQRS.Appointment.Commands.AppointmentAddedNotification;
+﻿
+using Appointment.Domain.Core.AggregatesModel.AppointmentAggregate.Events;
 using Appointment.Domain.Core.Interfaces.IRepository;
 using KarizmaClinicManagementSystem.Framework.Notifications.Email;
 using MediatR;
@@ -6,7 +7,7 @@ using MediatR;
 
 namespace Appointment.Application.CQRS.Appointment.Commands.SendAppointmentAddedEmail;
 
- public class AppointmentAddedSendEmailHandler : INotificationHandler<AppointmentAddedSendNotification>
+ public class AppointmentAddedSendEmailHandler : INotificationHandler<AddAppointmentSendNotificationEvent>
 {
     private readonly IAppointmentRepository appointmentRepository;
     private readonly IDoctorRepository doctorRepository;
@@ -24,15 +25,15 @@ namespace Appointment.Application.CQRS.Appointment.Commands.SendAppointmentAdded
         this.emailSender = emailSender;
     }
 
-    public async Task Handle(AppointmentAddedSendNotification notification, CancellationToken cancellationToken)
+    public async Task Handle(AddAppointmentSendNotificationEvent notification, CancellationToken cancellationToken)
     {
         // A more correct way: using the queue system
 
-        var doctor = await doctorRepository.GetByIdAsync(notification.DomainEvent.DoctorId);
+        var doctor = await doctorRepository.GetByIdAsync(notification.DoctorId);
 
-        var patient = await patientRepository.GetByIdAsync(notification.DomainEvent.PatientId);
+        var patient = await patientRepository.GetByIdAsync(notification.PatientId);
 
-        var appointment = await appointmentRepository.GetByIdAsync(notification.DomainEvent.AppointmentId);
+        var appointment = await appointmentRepository.GetByIdAsync(notification.AppointmentId);
 
         var email = new EmailMessage(
             patient.Email,

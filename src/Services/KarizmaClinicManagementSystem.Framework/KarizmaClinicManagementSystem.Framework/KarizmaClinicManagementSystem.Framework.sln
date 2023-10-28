@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarizmaClinicManagementSystem.Framework", "KarizmaClinicManagementSystem.Framework\KarizmaClinicManagementSystem.Framework.csproj", "{4D05CACF-4D6F-4BBC-9A09-2BE746E5ED10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D05CACF-4D6F-4BBC-9A09-2BE746E5ED10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D05CACF-4D6F-4BBC-9A09-2BE746E5ED10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D05CACF-4D6F-4BBC-9A09-2BE746E5ED10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D05CACF-4D6F-4BBC-9A09-2BE746E5ED10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {393237AE-C0A0-4EDF-8B23-60F9F8F0DA61}
+	EndGlobalSection
+EndGlobal

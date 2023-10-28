@@ -13,7 +13,12 @@ public class AddAppointmentSendNotificationEvent : DomainEventBase
     public  Guid DoctorId { get; }
     public  Guid PatientId { get; }
 
-    public AddAppointmentSendNotificationEvent(Guid appointmentId,Guid doctorId, Guid patientId)
+    public AddAppointmentSendNotificationEvent(
+        Guid appointmentId,
+        Guid doctorId, 
+        Guid patientId
+        ) 
+        : base()
     {
         this.AppointmentId = appointmentId;
         this.DoctorId = doctorId;
